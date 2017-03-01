@@ -49,3 +49,5 @@ Where `evaluate` looks for the string to be present in the Symbol Table, searche
 
 5. `wH(String var_name, Expression expr) `  
 Changes the value of a currently existing variable with the evaluated given expression.
+
+//TBC
