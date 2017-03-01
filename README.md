@@ -11,16 +11,22 @@ All these tables are represented as `Map`.
 The main interfaces of the program are `Expression` and `Statement`.
 
 **Expressions:**
+
 Have the method `int evaluate(ISymbolTable<String, Integer> table, IHeap<Integer> h)` which takes as parameters the **symbol table** and the **heap** and are as follows:
+
 1. `ConstExpression(int value)`
+
 2.  `VarExpression(String name)`
 **Evaluate** searches for the String in the ** Symbol Table** and returns it's value;
+
 3.`BooleanExpression(String operator, Expression operand1, Expression operand2)`
 It evaluates the Expressions and uses a comparison operator 
+
 4. `ArithExpression(char op,Expression first, Expression second)`
 Uses a basic arithmetic operation on the values of the given expressions.
 
 **Statements**:
+
 Have the method `PrgState execute(PrgState p)` which takes as parameter the current PrgState and returns a non-null value only if our PrgState **has been forked**. More on that soon
 Are the main blocks of execution;  **PrgState** takes a Statement initially, but one statement can contain 2 other Statements; these are called **Compound Statements**.
 1.`AssignStatement(String var, Expression expr)`
