@@ -27,19 +27,25 @@ Uses a basic arithmetic operation on the values of the given expressions.
 
 **Statements**:
 
-Have the method `PrgState execute(PrgState p)` which takes as parameter the current PrgState and returns a non-null value only if our PrgState **has been forked**. More on that soon
+Have the method `PrgState execute(PrgState p)` which takes as parameter the current PrgState and returns a non-null value only if our PrgState **has been forked**. More on that soon.  
 Are the main blocks of execution;  **PrgState** takes a Statement initially, but one statement can contain 2 other Statements; these are called **Compound Statements**.
-1.`AssignStatement(String var, Expression expr)`
+
+1.`AssignStatement(String var, Expression expr)`  
 Assigns to a String variable in the **symbol table** the value of the evaluated expression;
-2. `PrintStatement(Expression exp)`
+
+2. `PrintStatement(Expression exp)`  
 Prints the evaluated expression;
-3.`IfStatement(Expression exp, Statement thenB, Statement elseB)`
+
+3.`IfStatement(Expression exp, Statement thenB, Statement elseB)`  
 Pushes to the stack of execution statement `thenB` if exp evaluates to a value  != 0, otherwise pushes statements `elseB`;
-3.`WhileStatement(Statement stmt, Expression expr)`
+
+3.`WhileStatement(Statement stmt, Expression expr)`  
 As long as `expr` evaluates to !=0 pushes itself back on the execution stack;
-4. `newH(String var_name, Expression expr)`
-Creates a new variable in the heap space such that the Symbol Table will point to the heap record table, where you can find the actual variable value;
+
+4. `newH(String var_name, Expression expr)`  
+Creates a new variable in the heap space such that the Symbol Table will point to the heap record table, where you can find the actual variable value;  
 --> `rH(String var_name)` expression
 Where `evaluate` looks for the string to be present in the Symbol Table, searches the found ID in heap table and returns the value; 
-5. `wH(String var_name, Expression expr) `
+
+5. `wH(String var_name, Expression expr) `  
 Changes the value of a currently existing variable with the evaluated given expression.
