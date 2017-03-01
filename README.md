@@ -36,10 +36,10 @@ Assigns to a String variable in the **symbol table** the value of the evaluated 
 2. `PrintStatement(Expression exp)`  
 Prints the evaluated expression;
 
-3.`IfStatement(Expression exp, Statement thenB, Statement elseB)`  
+3. `IfStatement(Expression exp, Statement thenB, Statement elseB)`  
 Pushes to the stack of execution statement `thenB` if exp evaluates to a value  != 0, otherwise pushes statements `elseB`;
 
-3.`WhileStatement(Statement stmt, Expression expr)`  
+3. `WhileStatement(Statement stmt, Expression expr)`  
 As long as `expr` evaluates to !=0 pushes itself back on the execution stack;
 
 4. `newH(String var_name, Expression expr)`  
