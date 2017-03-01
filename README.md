@@ -30,7 +30,7 @@ Uses a basic arithmetic operation on the values of the given expressions.
 Have the method `PrgState execute(PrgState p)` which takes as parameter the current PrgState and returns a non-null value only if our PrgState **has been forked**. More on that soon.  
 Are the main blocks of execution;  **PrgState** takes a Statement initially, but one statement can contain 2 other Statements; these are called **Compound Statements**.
 
-1.`AssignStatement(String var, Expression expr)`  
+1. `AssignStatement(String var, Expression expr)`  
 Assigns to a String variable in the **symbol table** the value of the evaluated expression;
 
 2. `PrintStatement(Expression exp)`  
