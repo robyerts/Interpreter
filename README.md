@@ -36,18 +36,25 @@ Assigns to a String variable in the **symbol table** the value of the evaluated 
 2. `PrintStatement(Expression exp)`  
 Prints the evaluated expression;
 
-3. `IfStatement(Expression exp, Statement thenB, Statement elseB)`  
+1. `CompStatement(Statement first, Statement second)`
+
+1. `IfStatement(Expression exp, Statement thenB, Statement elseB)`  
 Pushes to the stack of execution statement `thenB` if exp evaluates to a value  != 0, otherwise pushes statements `elseB`;
 
-3. `WhileStatement(Statement stmt, Expression expr)`  
+4. `WhileStatement(Statement stmt, Expression expr)`  
 As long as `expr` evaluates to !=0 pushes itself back on the execution stack;
 
-4. `newH(String var_name, Expression expr)`  
-Creates a new variable in the heap space such that the Symbol Table will point to the heap record table, where you can find the actual variable value;  
+5. `newH(String var_name, Expression expr)`  
+Creates a new variable in the heap space such that the Symbol Table will point to the heap record table where you can find the actual variable value;  
 --> `rH(String var_name)` expression
 Where `evaluate` looks for the string to be present in the Symbol Table, searches the found ID in heap table and returns the value; 
 
-5. `wH(String var_name, Expression expr) `  
-Changes the value of a currently existing variable with the evaluated given expression.
+6. `wH(String var_name, Expression expr) `  
+Changes the value in the **Heap Table** of a currently existing variable with the evaluated given expression.
 
+7. ` newLock(String var_name)`
+Generates an ID for the new lock, creates/updates the entry in the**Symbol Table** and it will point to the an entry in the **Lock Table** where the lock is initialized with `-1`, meaning that no thread holds it;
+
+8.`lock(String var_name)`
+Checks the **Symbol Table** for an entry based on `var_name` and it uses the found value to check the **Lock Table**. If it find `-1` then will replace it with the the ID of the currently executing **PrgState**; otherwise, it pushes itself back on the **Exe Stack**
 //TBC
