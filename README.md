@@ -47,7 +47,7 @@ As long as `expr` evaluates to != 0 pushes itself back on the execution stack;
 5. `ForStatement(Statement stmt, Expression expr1, Expression expr2, Expression expr3)`-  limited functionality  
 Creates a new variable **v** in the **Symbol Table** . Careful **not to have variable v in use**; application will misbehave.  
 **v** will be assigned `expr1.evaluate(...)`. After every step it will take the value of `expr3.evaluate(...)` and the stopping condition is given by ` v < expr2.evaluate(...)`.
-5.. `newH(String var_name, Expression expr)`  
+5. `newH(String var_name, Expression expr)`  
 Creates a new variable in the heap space such that the Symbol Table will point to the heap record table where you can find the actual variable value;  
 --> `rH(String var_name)` expression
 Where `evaluate` looks for the string to be present in the Symbol Table, searches the found ID in heap table and returns the value; 
